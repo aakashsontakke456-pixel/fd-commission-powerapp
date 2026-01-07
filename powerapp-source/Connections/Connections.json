@@ -1,0 +1,65 @@
+{
+  "632d029d-a0b9-40db-b628-f8dcd73bc012": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/releases/v1.0.1782/1.0.1782.4452/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "632d029d-a0b9-40db-b628-f8dcd73bc012"
+  },
+  "f6a3c9d6-bb0e-4793-8e5d-d47c4bd70680": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1779/1.0.1779.4440/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://godavariurban.sharepoint.com/sites/GUMCCSLFDCOMMISTION": {
+        "dataSources": {
+          "Branch_FD_Submissions": {
+            "tableName": "5108aa70-6a7a-431c-a5ab-5a55b7dea50d"
+          },
+          "Commission_Rules": {
+            "tableName": "be984269-4146-4a24-a170-9d9b55af8d4e"
+          },
+          "EMPLOGINDATAFD": {
+            "tableName": "172d791b-826c-4f4a-bc55-cf77a91d8044"
+          },
+          "EMPLOGINDATAFD1": {
+            "tableName": "0af2881a-56f5-47d0-a7ff-79a60a5504e5"
+          },
+          "FD_Master": {
+            "tableName": "45d5dc4d-1883-49aa-b46f-ad0e432207ef"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "FD_Master",
+      "Branch_FD_Submissions",
+      "Commission_Rules",
+      "EMPLOGINDATAFD",
+      "EMPLOGINDATAFD1"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "f6a3c9d6-bb0e-4793-8e5d-d47c4bd70680"
+  }
+}

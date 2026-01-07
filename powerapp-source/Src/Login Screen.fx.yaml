@@ -1,0 +1,361 @@
+"'Login Screen' As screen.'autoLayout_HeaderFooter_ver1.0'":
+    BackgroundImage: =Special_FD_scheme_for_senior_citizens_1692589190515_1692589190832
+    ImagePosition: =ImagePosition.Stretch
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    OnVisible: |
+        =Set(varResetLogin, true);
+        Reset(ddBranch);
+        Reset(txtPassword);
+        Set(CurrentUser, Blank());
+        Set(varUser, Blank());
+
+    ScreenContainer2 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(0, 0, 0, 0.26)
+        Height: =767
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =50
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16.01
+        PaddingTop: =16.01
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        X: =0.00
+        ZIndex: =1
+
+        HeaderContainer2 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =60
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =1482.70
+            X: =17.78
+            ZIndex: =1
+
+            Label5 As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Center
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                Fill: =RGBA(39, 113, 194, 1)
+                FillPortions: =1
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                Size: =30.00
+                Text: ="Godavari Urban FD Commission Portal"
+                Width: =Parent.Width
+                X: =0.00
+                ZIndex: =1
+
+        MainContainer2 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.Start
+            DropShadow: =DropShadow.Bold
+            Fill: =RGBA(0, 0, 0, 0.45)
+            FillPortions: =0
+            Height: =500
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =20
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =80
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =600
+            X: =17.78
+            Y: |
+                =
+            ZIndex: =2
+
+            ddBranch As dropdown:
+                BorderColor: =RGBA(245, 245, 245, 1)
+                ChevronBackground: =RGBA(245, 245, 245, 1)
+                ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
+                ChevronDisabledFill: =RGBA(161, 159, 157, 1)
+                ChevronFill: =RGBA(50, 49, 48, 1)
+                ChevronHoverBackground: =RGBA(245, 245, 245, 1)
+                ChevronHoverFill: =RGBA(50, 49, 48, 1)
+                Color: =RGBA(50, 49, 48, 1)
+                Default: =
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                DisabledFill: =RGBA(242, 242, 241, 0)
+                Fill: =RGBA(245, 245, 245, 1)
+                Font: =Font.'Segoe UI'
+                HoverBorderColor: =RGBA(16, 110, 190, 1)
+                HoverColor: =RGBA(50, 49, 48, 1)
+                HoverFill: =RGBA(245, 245, 245, 1)
+                Items: |
+                    =Choices(EMPLOGINDATAFD.Branch_Code)
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                OnChange: |
+                    =Set(varResetLogin, false);
+                PaddingBottom: =5
+                PaddingLeft: =12
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                PressedBorderColor: =RGBA(16, 110, 190, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                SelectionColor: =RGBA(50, 49, 48, 1)
+                SelectionFill: =RGBA(0, 120, 212, 1)
+                Size: =13.00
+                Width: =328.00
+                X: =206.73
+                Y: =
+                ZIndex: =1
+
+            lblEmpName As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                Size: =13.00
+                Text: |
+                    =If(
+                        varResetLogin || IsBlank(ddBranch.Selected) || IsBlank(ddBranch.Selected.Value),
+                        "",
+                        LookUp(
+                            'EMPLOGINDATAFD',
+                            Branch_Code.Value = ddBranch.Selected.Value && IsActive = true,
+                            Employee_Name
+                        )
+                    )
+                Width: =328.00
+                X: =206.73
+                ZIndex: =3
+
+            lblEmpCode As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                Size: =13.00
+                Text: |
+                    =If(
+                        varResetLogin || IsBlank(ddBranch.Selected) || IsBlank(ddBranch.Selected.Value),
+                        "",
+                        LookUp(
+                            'EMPLOGINDATAFD',
+                            Branch_Code.Value = ddBranch.Selected.Value && IsActive = true,
+                            Employee_Code
+                        )
+                    )
+                Width: =328.00
+                X: =206.73
+                ZIndex: =4
+
+            "txtPassword As 'Text input'":
+                Align: =Align.Center
+                BasePaletteColor: =
+                BorderColor: =
+                DisplayMode: =DisplayMode.Edit
+                Fill: =
+                FontColor: =
+                Height: =40
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =32
+                LayoutMinWidth: =320
+                Placeholder: ="ENTER PASSWORD"
+                Type: ='TextInputCanvas.Type'.Password
+                Width: =328.00
+                X: =206.73
+                Y: =0
+                ZIndex: =5
+
+            btnLogin As Button:
+                BasePaletteColor: =
+                BorderColor: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =40
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                OnSelect: |-
+                    =// 1. Look up the user based on Branch and Password inputs
+                    Set(
+                        varUser,
+                        LookUp(
+                            'EMPLOGINDATAFD',
+                            Branch_Code.Value = ddBranch.Selected.Value &&
+                            Password = txtPassword.Value
+                        )
+                    );
+                    
+                    // 2. Handle login result
+                    If(
+                        IsBlank(varUser),
+                        // If no matching user is found
+                        Notify("Invalid Branch or Password", NotificationType.Error),
+                        
+                        // If a user is found
+                        If(
+                            varUser.IsActive = false,
+                            // If the account is inactive
+                            Notify("Your account is inactive. Contact Admin.", NotificationType.Warning),
+                            
+                            // If the account is active: Set current user and navigate
+                            Set(CurrentUser, varUser);
+                            
+                            // --- HO REDIRECTION LOGIC STARTS HERE ---
+                            If(
+                                varUser.Branch_Code.Value = "Head Office",
+                                // If it's the Head Office user, navigate to the FD Payout Entries screen
+                                Navigate(
+                                    'FD Payout Entries',
+                                    ScreenTransition.Fade
+                                ),
+                                
+                                // Otherwise (Branch user), navigate to the Branch FD Payout Request view
+                                Navigate(
+                                    'Branch FD Payout Request view',
+                                    ScreenTransition.Fade
+                                )
+                            )
+                            // --- HO REDIRECTION LOGIC ENDS HERE ---
+                        )
+                    )
+                Text: ="LOGIN "
+                Width: =150.00
+                X: =305.66
+                Y: |
+                    =
+                ZIndex: =6
+
+    Label2 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =58
+        PaddingRight: =5.00
+        PaddingTop: =5.00
+        Size: =30.00
+        Text: ="LOGIN PAGE "
+        Width: =338.00
+        X: =150
+        Y: =153
+        ZIndex: =2
+
+    Image2_2 As image:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =40
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: ='images__2_-removebg-preview__1_-removebg-preview'
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =56.00
+        X: =15.00
+        Y: =25
+        ZIndex: =3
+
+    ButtonCanvas4 As Button:
+        BasePaletteColor: =RGBA(227, 106, 244, 1)
+        BorderColor: =
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        Height: =32
+        OnSelect: |-
+            =Launch("https://www.intochat.ai/bubble-chat/cmi5p7z6x0004l804k0aiipmf")
+        Text: ="AI ChatBox"
+        Width: =156
+        X: =627
+        Y: =132
+        ZIndex: =4
+
+    Label13 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(50, 49, 48, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Size: =13
+        Text: |
+            =If(
+                varResetLogin || IsBlank(ddBranch.Selected) || IsBlank(ddBranch.Selected.Value),
+                "",
+                LookUp(
+                    'EMPLOGINDATAFD',
+                    Branch_Code.Value = ddBranch.Selected.Value && IsActive = true,
+                    Password
+                )
+            )
+        X: =676
+        Y: =300
+        ZIndex: =5
+

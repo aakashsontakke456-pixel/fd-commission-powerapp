@@ -1,0 +1,1064 @@
+"'FD Payout Entries_BRANCH' As screen.'headerGalleryLayout_ver1.0'":
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    OnVisible: =
+
+    Label4_1 As label:
+        Align: =Align.Center
+        AutoHeight: =true
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        Fill: =RGBA(39, 113, 194, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        PaddingRight: =5.00
+        PaddingTop: =5.00
+        Size: =25.00
+        Text: ="HEAD OFFICE ( HO PAYOUT ENTRIES ) "
+        Width: =Parent.Width
+        X: =
+        ZIndex: =1
+
+    Label10_8 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(50, 49, 48, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =41
+        PaddingRight: =5.00
+        PaddingTop: =5.00
+        Size: =13.00
+        Text: |+
+            ="Welcome, " 
+            
+            
+        Width: =101.00
+        X: =15.00
+        Y: =66
+        ZIndex: =2
+
+    Label10_9 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(21, 68, 18, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =41
+        PaddingRight: =5.00
+        PaddingTop: =5.00
+        Size: =13.00
+        Text: |+
+            =varUser.Branch_Code.Value
+            
+            
+        Width: =246
+        X: =96.00
+        Y: =66
+        ZIndex: =3
+
+    Label10_10 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(21, 68, 18, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =37
+        PaddingRight: =5.00
+        PaddingTop: =5.00
+        Size: =13.00
+        Text: |+
+            ="User:-" & varUser.Employee_Name
+            
+        Width: =210.00
+        X: =Parent.Width - Self.Width-220
+        Y: =70
+        ZIndex: =4
+
+    btnLogout_4 As Button:
+        AcceptsFocus: =true
+        AccessibleLabel: =""
+        Align: =""
+        Appearance: ="Primary"
+        BasePaletteColor: =RGBA(189, 178, 176, 1)
+        BorderColor: =
+        BorderStyle: =""
+        ContentLanguage: =""
+        DisplayMode: =DisplayMode.Edit
+        Font: =""
+        FontColor: =
+        FontItalic: =false
+        FontSize: =0
+        FontStrikethrough: =false
+        FontUnderline: =false
+        FontWeight: =""
+        Height: =32
+        Icon: =""
+        IconRotation: =0
+        IconStyle: ="Outline"
+        Layout: ="Icon before"
+        OnSelect: |
+            =
+            Navigate('Branch FD Payout Request view', ScreenTransition.Fade);
+        TabIndex: =0
+        Text: ="BACK"
+        Tooltip: =""
+        VerticalAlign: =""
+        Visible: =true
+        Width: =96.00
+        X: =Parent.Width - Self.Width-120
+        Y: =74
+        ZIndex: =5
+
+    btnLogout_5 As Button:
+        BasePaletteColor: =RGBA(249, 83, 109, 1)
+        BorderColor: =
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        Height: =32
+        OnSelect: |
+            =// OnSelect of Logout button
+            Set(CurrentUser, Blank());
+            Set(varUser, Blank());
+            Set(varResetLogin, true);   // trigger labels to go blank
+            Reset(ddBranch);
+            Reset(txtPassword);
+            Reset(DatePickerCanvas2);
+            Navigate('Login Screen', ScreenTransition.Fade);
+        Text: ="LOG OUT"
+        Width: =96.00
+        X: =Parent.Width - Self.Width-10
+        Y: =74
+        ZIndex: =6
+
+    ScreenContainer3_1 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =654
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =16
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16.01
+        PaddingTop: =16.01
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        X: =0.00
+        Y: =113
+        ZIndex: =7
+
+        Container6_1 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =50
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutGap: =10
+            LayoutJustifyContent: =LayoutJustifyContent.End
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =Parent.Width
+            X: =17.78
+            ZIndex: =2
+
+            ddStatus_4 As dropdown:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderThickness: =1
+                ChevronBackground: =RGBA(245, 245, 245, 1)
+                ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
+                ChevronDisabledFill: =RGBA(166, 215, 153, 1)
+                ChevronFill: =RGBA(50, 49, 48, 1)
+                ChevronHoverBackground: =RGBA(245, 245, 245, 1)
+                ChevronHoverFill: =RGBA(50, 49, 48, 1)
+                Color: =RGBA(50, 49, 48, 1)
+                Default: |
+                    ="All"
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                DisabledFill: =RGBA(242, 242, 241, 0)
+                Fill: =RGBA(166, 215, 153, 1)
+                Font: =Font.'Segoe UI'
+                Height: =35
+                HoverBorderColor: =RGBA(16, 110, 190, 1)
+                HoverColor: =RGBA(50, 49, 48, 1)
+                HoverFill: =RGBA(245, 245, 245, 1)
+                Items: |+
+                    =["SELECT STATUS", "Pending", "Approved","Not Verified", "Rejected"]
+                    
+                    
+                    
+                    
+                    
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                PaddingBottom: =5
+                PaddingLeft: =20
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                PressedBorderColor: =RGBA(16, 110, 190, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                SelectionColor: =RGBA(50, 49, 48, 1)
+                SelectionFill: =RGBA(0, 120, 212, 1)
+                Size: =13.00
+                Width: =196.00
+                X: =385.68
+                Y: =34
+                ZIndex: =1
+
+            ddStatus_6 As dropdown:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderThickness: =1
+                ChevronBackground: =RGBA(245, 245, 245, 1)
+                ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
+                ChevronDisabledFill: =RGBA(166, 215, 153, 1)
+                ChevronFill: =RGBA(50, 49, 48, 1)
+                ChevronHoverBackground: =RGBA(245, 245, 245, 1)
+                ChevronHoverFill: =RGBA(50, 49, 48, 1)
+                Color: =RGBA(50, 49, 48, 1)
+                Default: |
+                    ="All Dates"
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                DisabledFill: =RGBA(242, 242, 241, 0)
+                Fill: =RGBA(166, 215, 153, 1)
+                Font: =Font.'Segoe UI'
+                Height: =35
+                HoverBorderColor: =RGBA(16, 110, 190, 1)
+                HoverColor: =RGBA(50, 49, 48, 1)
+                HoverFill: =RGBA(245, 245, 245, 1)
+                Items: |
+                    =Distinct(
+                      Filter('Branch_FD_Submissions', BranchCode = CurrentUser.Branch_Code.Value),
+                      DateValue('Submitted Date')
+                    )
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                PaddingBottom: =5
+                PaddingLeft: =20
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                PressedBorderColor: =RGBA(16, 110, 190, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                SelectionColor: =RGBA(50, 49, 48, 1)
+                SelectionFill: =RGBA(0, 120, 212, 1)
+                Size: =13.00
+                Width: =196.00
+                X: =800.26
+                Y: =34
+                ZIndex: =3
+
+            ddStatus_7 As dropdown:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderThickness: =1
+                ChevronBackground: =RGBA(245, 245, 245, 1)
+                ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
+                ChevronDisabledFill: =RGBA(166, 215, 153, 1)
+                ChevronFill: =RGBA(50, 49, 48, 1)
+                ChevronHoverBackground: =RGBA(245, 245, 245, 1)
+                ChevronHoverFill: =RGBA(50, 49, 48, 1)
+                Color: =RGBA(50, 49, 48, 1)
+                Default: |
+                    ="All"
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                DisabledFill: =RGBA(242, 242, 241, 0)
+                Fill: =RGBA(166, 215, 153, 1)
+                Font: =Font.'Segoe UI'
+                Height: =35
+                HoverBorderColor: =RGBA(16, 110, 190, 1)
+                HoverColor: =RGBA(50, 49, 48, 1)
+                HoverFill: =RGBA(245, 245, 245, 1)
+                Items: |
+                    =Choices(Branch_FD_Submissions.AgentName)
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                PaddingBottom: =5
+                PaddingLeft: =20
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                PressedBorderColor: =RGBA(16, 110, 190, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                SelectionColor: =RGBA(50, 49, 48, 1)
+                SelectionFill: =RGBA(0, 120, 212, 1)
+                Size: =13.00
+                Width: =250.00
+                X: =1006.99
+                Y: =34
+                ZIndex: =4
+
+            Icon1_1 As icon.Reset:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =RGBA(39, 113, 194, 1)
+                DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                DisabledColor: =RGBA(225, 223, 221, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =30
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 0, 0, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Icon: =Icon.Reset
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                OnSelect: |-
+                    =
+                    Reset(ddStatus_6);
+                    Reset(ddStatus_7);
+                    Reset(ddStatus_4);
+                    Reset(DatePickerCanvas2)
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedColor: =RGBA(16, 110, 190, 1)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =45
+                X: =1268.19
+                ZIndex: =5
+
+        Container3_1 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 191, 0, 1)
+            FillPortions: =0
+            Height: =50
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =1332.66
+            X: =17.78
+            Y: =40
+            ZIndex: =3
+
+            Label3_2 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                Size: =12
+                Text: ="AGENT NAME"
+                Width: =150.00
+                X: =7
+                Y: =9
+                ZIndex: =2
+
+            Label3_14 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                Size: =12
+                Text: ="GL CODE"
+                Width: =100.00
+                X: =Parent.Width - Self.Width-1280
+                Y: =9
+                ZIndex: =3
+
+            Label3_15 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                Size: =12
+                Text: ="AC.NO"
+                Width: =100.00
+                X: =Parent.Width - Self.Width-1100
+                Y: =9
+                ZIndex: =4
+
+            Label3_16 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                Size: =12
+                Text: ="PERIOD"
+                Width: =100.00
+                X: =Parent.Width - Self.Width-910
+                Y: =9
+                ZIndex: =5
+
+            Label3_17 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                Size: =12
+                Text: ="COMMISION %"
+                Width: =170.00
+                X: =Parent.Width - Self.Width-740
+                Y: =9
+                ZIndex: =6
+
+            Label3_18 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                Size: =12
+                Text: ="COMMISION AMT"
+                Width: =170.00
+                X: =Parent.Width - Self.Width-600
+                Y: =9
+                ZIndex: =7
+
+            Label3_19 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                Size: =12
+                Text: ="STATUS"
+                Width: =82.00
+                X: =Parent.Width - Self.Width-460
+                Y: =9
+                ZIndex: =8
+
+            Label3_20 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                Size: =12
+                Text: ="VERIFIED DATE"
+                Width: =147.00
+                X: =Parent.Width - Self.Width-280
+                Y: =9
+                ZIndex: =9
+
+            Label3_21 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                Size: =12
+                Text: ="VERIFIED PERSON"
+                Width: =160.00
+                X: =Parent.Width - Self.Width-110
+                Y: =9
+                ZIndex: =10
+
+            Label3_22 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                Size: =12
+                Text: ="ACTION"
+                Width: =86.99
+                X: =Parent.Width - Self.Width-20
+                Y: =9
+                ZIndex: =11
+
+            Label3_24 As label:
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                Fill: =RGBA(255, 255, 0, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Bold
+                Height: =35
+                PaddingRight: =5.00
+                PaddingTop: =5.00
+                Size: =12
+                Text: ="CBS ENTRY STATUS"
+                Width: =160
+                X: =180
+                Y: =7
+                ZIndex: =24
+
+        Container2_1 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Height: =Parent.Height
+            LayoutMaxHeight: =
+            LayoutMaxWidth: =
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =1332.66
+            X: =17.78
+            ZIndex: =4
+
+            "Gallery1_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                '#CopilotOverlayLabel': ="Filtered"
+                AlignInContainer: =AlignInContainer.Start
+                BorderColor: =RGBA(99, 139, 44, 1)
+                BorderThickness: =2
+                DelayItemLoading: =true
+                Fill: =RGBA(255, 249, 232, 1)
+                Height: |
+                    =450
+                Items: |
+                    =Sort(
+                        Filter(
+                            'Branch_FD_Submissions',
+                    
+                            BranchCode = CurrentUser.Branch_Code.Value,
+                    
+                            (ddStatus_4.Selected.Value = "SELECT STATUS" 
+                                || Status.Value = ddStatus_4.Selected.Value),
+                    
+                    
+                            (ddStatus_7.Selected.Value = "SELECT AGENT NAME" 
+                                || AgentName.Value = ddStatus_7.Selected.Value),
+                    
+                            (IsBlank(txtSearchBox1_1.Text) 
+                                || StartsWith(A_c_No, txtSearchBox1_1.Text)),
+                    
+                            // --- DATE FILTER FOR SHAREPOINT DATE ONLY COLUMN ---
+                            (
+                                IsBlank(DatePickerCanvas2.SelectedDate)
+                                ||
+                                DateValue('Submitted Date') = DatePickerCanvas2.SelectedDate
+                            )
+                        ),
+                    
+                        'Submitted Date',
+                        SortOrder.Descending
+                    )
+                Layout: =Layout.Vertical
+                LayoutMaxHeight: =
+                LayoutMaxWidth: =
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                ShowNavigation: =true
+                TemplatePadding: =0
+                TemplateSize: =60
+                Transition: =Transition.Push
+                Width: =1332.66
+                X: =0.00
+                Y: |+
+                    =
+                    
+                ZIndex: =22
+
+                Rectangle4_1 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 120, 212, 1)
+                    Height: =Parent.TemplateHeight - Separator3_1.Height
+                    OnSelect: =Select(Parent)
+                    Visible: =ThisItem.IsSelected
+                    Width: =4.00
+                    X: =0.00
+                    ZIndex: =1
+
+                Subtitle3_11 As label:
+                    Color: =RGBA(96, 94, 92, 1)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =24
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =0.00
+                    PaddingTop: =0.00
+                    Size: =12.00
+                    Text: =ThisItem.AgentName.Value
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =185
+                    X: =10
+                    Y: =9
+                    ZIndex: =2
+
+                Label12_1 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Bold
+                    OnSelect: =Select(Parent)
+                    PaddingRight: =5.00
+                    PaddingTop: =5.00
+                    Size: =13.00
+                    Text: |
+                        =If(
+                            IsBlank(ThisItem.Attachments),
+                            "0",
+                            CountRows(ThisItem.Attachments)
+                        )
+                    Width: =40.00
+                    X: =Parent.Width - Self.Width-70
+                    Y: =12
+                    ZIndex: =3
+
+                HOEdit_1 As Button:
+                    AcceptsFocus: =true
+                    AccessibleLabel: =""
+                    Align: =Align.Center
+                    Appearance: ="Primary"
+                    BasePaletteColor: =
+                    BorderColor: =
+                    BorderStyle: =""
+                    ContentLanguage: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =15
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =35
+                    Icon: ="ArrowRight"
+                    IconRotation: =0
+                    IconStyle: ="Outline"
+                    Layout: ="Icon before"
+                    OnSelect: |
+                        =Set(varSelectedItem, ThisItem);
+                        Navigate('HO Approval Screen', ScreenTransition.Fade)
+                    TabIndex: =0
+                    Text: ="Actions"
+                    Tooltip: =""
+                    VerticalAlign: =VerticalAlign.Middle
+                    Visible: =CurrentUser.Branch_Code.Value = "Head Office"
+                    Width: =80.00
+                    X: =1234.00
+                    Y: =15
+                    ZIndex: =4
+
+                ButtonCanvas3_1 As Button:
+                    BasePaletteColor: =
+                    BorderColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =32
+                    Icon: ="Attach"
+                    OnSelect: |-
+                        =ForAll(
+                            ThisItem.Attachments,
+                            Download(ThisRecord.AbsoluteUri)
+                        )
+                    Text: =
+                    Width: =50.01
+                    X: =Parent.Width - Self.Width-20
+                    Y: =16
+                    ZIndex: =5
+
+                Subtitle3_13 As label:
+                    Align: =Align.Center
+                    BorderColor: |
+                        =Color
+                    BorderThickness: =1
+                    Color: |
+                        =Switch(
+                            ThisItem.Status.Value,
+                            "Rejected", RGBA(255, 0, 0, 1),        // Red
+                            "Approved", RGBA(0, 100, 0, 1),        // Dark Green
+                            "Pending", RGBA(179, 107, 0, 1),       // Dark Orange
+                            RGBA(96, 94, 92, 1)                    // Default (Grey)
+                        )
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    Fill: |
+                        =Switch(
+                            ThisItem.Status.Value,
+                            "Rejected", RGBA(255, 204, 204, 1),
+                            "Approved", RGBA(204, 255, 204, 1),
+                            "Verified & Approved", RGBA(204, 255, 204, 1),
+                            "Pending", RGBA(255, 229, 204, 1),
+                            RGBA(240, 240, 240, 1)
+                        )
+                    Font: =Font.'Segoe UI'
+                    FontWeight: |
+                        =FontWeight.Semibold
+                    Height: =28
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =0.00
+                    PaddingTop: =0.00
+                    Size: =12.00
+                    Text: =ThisItem.Status.Value
+                    Width: =130.00
+                    X: =Parent.Width - Self.Width-440
+                    Y: =18
+                    ZIndex: =7
+
+                Subtitle3_14 As label:
+                    Align: =Align.Center
+                    BorderThickness: =1
+                    Color: =RGBA(96, 94, 92, 1)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =28
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =0.00
+                    PaddingTop: =0.00
+                    Size: =12.00
+                    Text: =ThisItem.VerifiedDate
+                    Width: =108.00
+                    X: =Parent.Width - Self.Width-300
+                    Y: =18
+                    ZIndex: =8
+
+                Subtitle3_15 As label:
+                    Align: =Align.Center
+                    BorderThickness: =1
+                    Color: =RGBA(96, 94, 92, 1)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =28
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =0.00
+                    PaddingTop: =0.00
+                    Size: =12.00
+                    Text: =ThisItem.VerifiedBy.Value
+                    Width: =139.00
+                    X: =Parent.Width - Self.Width-130
+                    Y: =18
+                    ZIndex: =9
+
+                Subtitle3_16 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(96, 94, 92, 1)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    Font: =Font.'Lato Black'
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =26
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =0.00
+                    PaddingTop: =0.00
+                    Size: =12.00
+                    Text: =ThisItem.'Commission Amount'
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =108.00
+                    X: =Parent.Width - Self.Width-630
+                    Y: =19
+                    ZIndex: =10
+
+                Subtitle3_17 As label:
+                    Color: =RGBA(96, 94, 92, 1)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    Font: =Font.'Lato Black'
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =24
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =0.00
+                    PaddingTop: =0.00
+                    Size: =12.00
+                    Text: |
+                        =Text(ThisItem.'Commission Percentage ') & "%"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =70.00
+                    X: =Parent.Width - Self.Width-800
+                    Y: =20
+                    ZIndex: =11
+
+                Subtitle3_18 As label:
+                    Color: =RGBA(96, 94, 92, 1)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =17
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =0.00
+                    PaddingTop: =0.00
+                    Size: =12.00
+                    Text: =ThisItem.A_c_No
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =108.00
+                    X: =Parent.Width - Self.Width-1100
+                    Y: =24
+                    ZIndex: =12
+
+                Subtitle3_19 As label:
+                    Color: =RGBA(96, 94, 92, 1)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =17
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =0.00
+                    PaddingTop: =0.00
+                    Size: =12.00
+                    Text: =ThisItem.Period
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =108.00
+                    X: =Parent.Width - Self.Width-910
+                    Y: =24
+                    ZIndex: =13
+
+                Subtitle3_20 As label:
+                    Color: =RGBA(96, 94, 92, 1)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =31
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =0.00
+                    PaddingTop: =0.00
+                    Size: =12.00
+                    Text: =ThisItem.GLCode
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =63.00
+                    X: =Parent.Width - Self.Width-1280
+                    Y: =25
+                    ZIndex: =14
+
+                Subtitle3_21 As label:
+                    Color: =RGBA(96, 94, 92, 1)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =17
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =0.00
+                    PaddingTop: =0.00
+                    Size: =10.00
+                    Text: =ThisItem.BranchCode
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =242.00
+                    X: =42.00
+                    Y: =33
+                    ZIndex: =15
+
+                Separator3_1 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderStyle: =BorderStyle.None
+                    Fill: =RGBA(152, 208, 70, 1)
+                    Height: =2
+                    OnSelect: =Select(Parent)
+                    Width: =1334.00
+                    X: =0.00
+                    Y: =Parent.TemplateHeight - Self.Height
+                    ZIndex: =16
+
+                Subtitle3_22 As label:
+                    Align: =Align.Center
+                    Color: |
+                        =Switch(
+                            ThisItem.'CBS Entry Status'.Value,
+                            "NOT TAKEN", RGBA(255, 0, 0, 1),        // Red
+                            "DONE", RGBA(0, 100, 0, 1)      // Dark Green
+                        
+                        )
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    Fill: |-
+                        =Switch(
+                            ThisItem.'CBS Entry Status'.Value,
+                            "NOT TAKEN", RGBA(255, 229, 204, 1),
+                            "DONE",RGBA(152, 208, 70, 1),
+                            RGBA(240, 240, 240, 1)
+                        )
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =25
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =12
+                    PaddingRight: =0.00
+                    PaddingTop: =0.00
+                    Size: =12.00
+                    Text: =ThisItem.'CBS Entry Status'.Value
+                    Width: =108.00
+                    X: =208
+                    Y: =18
+                    ZIndex: =23
+
+    txtSearchBox1_1 As text:
+        Align: =Align.Center
+        BorderColor: =RGBA(99, 139, 44, 1)
+        BorderThickness: =2
+        Color: =RGBA(50, 49, 48, 1)
+        Default: =
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        DisabledFill: =RGBA(242, 242, 241, 0)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =35
+        HintText: ="""Search by Name &  ID"
+        HoverBorderColor: =RGBA(255, 191, 0, 1)
+        HoverColor: =RGBA(50, 49, 48, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        PressedBorderColor: =RGBA(0, 120, 212, 1)
+        PressedColor: =RGBA(50, 49, 48, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =10
+        RadiusTopRight: =10
+        Size: =12.00
+        Width: =250.00
+        X: =27.00
+        Y: =136
+        ZIndex: =8
+
+    Icon5 As icon.Cancel:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(39, 113, 194, 1)
+        DisabledBorderColor: =RGBA(245, 245, 245, 1)
+        DisabledColor: =RGBA(225, 223, 221, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =33
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 0, 0, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Cancel
+        OnSelect: =Reset(txtSearchBox1_1);
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =RGBA(16, 110, 190, 1)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =40
+        X: =277
+        Y: =136
+        ZIndex: =9
+
+    "DatePickerCanvas2 As 'Date picker'":
+        BasePaletteColor: =
+        BorderColor: =
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(255, 191, 0, 1)
+        FontColor: =
+        Height: =33
+        SelectedDate: |
+            =
+        Width: =175
+        X: =677
+        Y: =137
+        ZIndex: =11
+
