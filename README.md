@@ -11,6 +11,10 @@ FD Commission & Payout requests at branch level with approval workflow.
 - Branch-based login
 - FD payout request entry
 - Commission calculation
+
+https://github.com/user-attachments/assets/c92f783a-d7c6-429f-9f9b-8108e71d89d8
+
+
 - Daily submission summary
 - Role-based visibility
 - Power Automate approval workflow
